@@ -70,6 +70,11 @@ summary {
     font-weight: bold;
     list-style: none;
     position: relative;
+
+    transition: transform 0.2s ease;
+}
+summary:hover {
+    transform: scale(1.05);
 }
 
 summary::marker,
@@ -93,8 +98,39 @@ summary::after {
 details[open] summary::after {
     transform: translateY(-50%) rotate(-135deg);
 }
+details p, details ul, details img {
+    padding: 2% 4%;
+}
 
 /* ahora los estilos de los contenidos que están dentro de esos details y demás */
+/* descripcion */
 .descripcion {
     font-size: 0.8em;
+}
+
+/* espacio del visualizer */
+.espacio-visualizer {
+    width: 90%;
+    margin: 4% auto;
+    aspect-ratio: 16/9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url("img/miniatura.png");
+    background-size: cover;
+    background-position: center;
+}
+.boton-reproducir {
+    width: 25%;
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+}
+.espacio-visualizer:hover > .boton-reproducir {
+    transform: scale(1.2);
+}
+.espacio-visualizer:hover {
+    filter: brightness(1.4);
 }
