@@ -35,7 +35,8 @@ video {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 80%;
+    gap: 2%;
+    width: 70%;
     height: 100vh;
     margin: 0 auto;
     box-sizing: border-box;
@@ -53,3 +54,19 @@ video {
 
 /* ahora la parte del contenido */
 /* parte de personalizaciones de los details y summary */
+details {
+    width: 80%;
+    margin: 0 auto;
+    background: linear-gradient(to right, white, rgb(255, 145, 145));
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+summary {
+    cursor:pointer;
+    padding: 8%;
+
+}
+summary::-webkit-details-marker {
+    display: none;
+}
