@@ -3,7 +3,7 @@
     padding: 0;
 }
 body {
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Arial', sans-serif;
     background-image: url('img/miniatura.png');
     background-size:cover;
@@ -12,12 +12,13 @@ body {
 /* parte del fondo del video */
 .container {
     position: fixed;
-    top: 15%;
+    top: 10%;
     right: 15%;
     z-index: -1;
     overflow: hidden;
     width: 70%;
-    height: 70%;
+    height: 80%;
+    border-radius: 28px;
     box-shadow: 0 0 30px 2px rgba(255, 0, 0, 0.705);
 }
 video {
@@ -35,7 +36,7 @@ video {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2%;
+    gap: 1%;
     width: 70%;
     height: 100vh;
     margin: 0 auto;
@@ -44,9 +45,10 @@ video {
 }
 .foto {
     width: 100%;
+    margin-bottom: 6%;
 }
 .imagen-portada {
-    width: 70%;
+    width: 75%;
     border-radius: 50%;
     display: block;
     margin: 0 auto;
@@ -63,10 +65,36 @@ details {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 summary {
-    cursor:pointer;
-    padding: 8%;
-
+    cursor: pointer;
+    padding: 6%;
+    font-weight: bold;
+    list-style: none;
+    position: relative;
 }
+
+summary::marker,
 summary::-webkit-details-marker {
     display: none;
+}
+
+summary::after {
+    content: "";
+    position: absolute;
+    right: 6%;
+    top: 50%;
+    width: 0.55em;
+    height: 0.55em;
+    border-right: 2px solid #333;
+    border-bottom: 2px solid #333;
+    transform: translateY(-50%) rotate(45deg);
+    transition: transform 0.2s ease;
+}
+
+details[open] summary::after {
+    transform: translateY(-50%) rotate(-135deg);
+}
+
+/* ahora los estilos de los contenidos que están dentro de esos details y demás */
+.descripcion {
+    font-size: 0.8em;
 }
