@@ -13,10 +13,10 @@ body {
 .container {
     position: fixed;
     top: 10%;
-    right: 15%;
+    right: 10%;
     z-index: -1;
     overflow: hidden;
-    width: 70%;
+    width: 80%;
     height: 80%;
     border-radius: 28px;
     box-shadow: 0 0 30px 2px rgba(255, 0, 0, 0.705);
@@ -37,7 +37,7 @@ video {
     align-items: center;
     justify-content: center;
     gap: 1%;
-    width: 70%;
+    width: 80%;
     height: 100vh;
     margin: 0 auto;
     box-sizing: border-box;
@@ -48,7 +48,7 @@ video {
     margin-bottom: 6%;
 }
 .imagen-portada {
-    width: 75%;
+    width: 70%;
     border-radius: 50%;
     display: block;
     margin: 0 auto;
@@ -97,15 +97,17 @@ summary::after {
 
 details[open] summary::after {
     transform: translateY(-50%) rotate(-135deg);
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
 }
 details p, details ul, details img {
-    padding: 2% 4%;
+    padding: 4%;
 }
 
 /* ahora los estilos de los contenidos que están dentro de esos details y demás */
 /* descripcion */
 .descripcion {
-    font-size: 0.8em;
+    font-size: 0.9em;
 }
 
 /* espacio del visualizer */
@@ -133,4 +135,56 @@ details p, details ul, details img {
 }
 .espacio-visualizer:hover {
     filter: brightness(1.4);
+}
+
+/* parte de interactivos de los estilos del desplegable */
+.desplegable-abierto {
+    background: linear-gradient(to right, black, rgb(73, 0, 0));
+    color: white;
+}
+
+/* parte de la lista y los enlaces */
+li {
+    list-style: none;
+    margin: 2% 0;  
+}
+.enlace-completo {
+    display: block;
+    width: 80%;
+    padding: 4%;
+    box-sizing: border-box;
+    background: linear-gradient(to right, white, rgb(78, 78, 78));
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    margin: 0 auto;
+
+    transition: transform 0.2s ease;
+}
+.enlace-completo:hover {
+    transform: scale(1.04);
+    background: linear-gradient(to right, rgb(0, 0, 0), rgb(101, 101, 101));
+    color: white;
+}
+
+/* enlace lindo */
+.enlace-espacio {
+    width: 80%;
+    margin: 0 auto;
+}
+.boton-llamativo {
+    width: 100%;
+    margin-top: 6%;
+    background: linear-gradient(to right, rgb(255, 0, 0), rgb(255, 86, 86));
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1em;
+}
+.boton-llamativo:hover {
+    background: linear-gradient(to right, rgb(255, 0, 0), rgb(255, 86, 86));
+    box-shadow: 0 0 12px 2px rgba(255, 165, 30, 0.7);
+    color: white;
+    transform: scale(1.1);
 }
